@@ -1,0 +1,91 @@
+# GraphQL Schema for OmniChain DeFi Indexer
+
+"""
+Transfer event - tracks all PYUSD token transfers
+"""
+type Transfer @entity {
+  """Unique ID: txHash-logIndex"""
+  id: ID!
+  
+  """Sender address"""
+  from: String!
+  
+  """Recipient address"""
+  to: String!
+  
+  """Transfer amount (in wei)"""
+  value: BigInt!
+  
+  """Transfer amount in USD (calculated)"""
+  valueUSD: Float
+  
+  """Block number"""
+  blockNumber: Int!
+  
+  """Block timestamp (Unix)"""
+  timestamp: Int!
+  
+  """Transaction hash"""
+  transactionHash: String!
+  
+  """Log index in the transaction"""
+  logIndex: Int!
+}
+
+"""
+Daily statistics aggregation
+"""
+type DailyStats @entity {
+  """Date in format YYYY-MM-DD"""
+  id: ID!
+  
+  """Date timestamp"""
+  date: Int!
+  
+  """Total transaction count"""
+  txCount: Int!
+  
+  """Total volume (in wei)"""
+  totalVolume: BigInt!
+  
+  """Total volume in USD"""
+  totalVolumeUSD: Float
+  
+  """Unique senders count"""
+  uniqueSenders: Int!
+  
+  """Unique receivers count"""
+  uniqueReceivers: Int!
+}
+
+
+"""
+Address balance tracker - updated in real-time
+"""
+type AddressBalance @entity {
+  """Address (lowercase)"""
+  id: ID!
+  
+  """Current balance (in wei)"""
+  balance: BigInt!
+  
+  """Total received amount"""
+  totalReceived: BigInt!
+  
+  """Total sent amount"""
+  totalSent: BigInt!
+  
+  """Number of incoming transfers"""
+  incomingCount: Int!
+  
+  """Number of outgoing transfers"""
+  outgoingCount: Int!
+  
+  """Last updated timestamp"""
+  lastUpdate: Int!
+  
+  """Last updated block number"""
+  lastBlock: Int!
+}
+
+

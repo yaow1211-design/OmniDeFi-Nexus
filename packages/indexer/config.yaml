@@ -1,0 +1,16 @@
+# Envio Indexer Configuration
+name: omnichain-defi-indexer
+description: PYUSD Transfer Event Indexer
+
+networks:
+  - id: 11155111  # Sepolia
+    start_block: 5000000
+    contracts:
+      - name: PYUSD
+        address: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+        abi_file_path: ./abis/ERC20.json
+        handler: ./src/EventHandlers.ts
+        events:
+          - event: "Transfer(address indexed from, address indexed to, uint256 value)"
+    rpc_config:
+      url: https://eth-sepolia.g.alchemy.com/v2/a_gFIJZ5scY2Vj6Dj8LQe

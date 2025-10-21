@@ -1,0 +1,27 @@
+{
+  "name": "indexer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Envio indexer for OmniChain DeFi Nexus",
+  "scripts": {
+    "codegen": "envio codegen",
+    "dev": "envio dev",
+    "start": "envio start",
+    "stop": "envio stop",
+    "test": "envio test"
+  },
+  "dependencies": {
+    "envio": "latest",
+    "js-sdsl": "^4.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@rescript/core": "^1.6.1",
+    "rescript": "^11.1.4"
+  }
+}
+
+
+

@@ -1,0 +1,31 @@
+{
+  "name": "omnichain-defi-nexus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OmniChain DeFi & Commerce Nexus - Data Dashboard & Analytics Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "api:dev": "pnpm --filter api dev",
+    "frontend:dev": "pnpm --filter frontend dev",
+    "indexer:dev": "pnpm --filter indexer dev"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
+
+
+
