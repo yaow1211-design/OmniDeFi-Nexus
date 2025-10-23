@@ -50,6 +50,9 @@ frontend-debug.log
 envio*.log
 .compiler.log
 
+# Archive (old logs and debug files)
+archive/logs/
+
 # Generated files
 generated/
 
